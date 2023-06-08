@@ -1,0 +1,62 @@
+@charset "UTF-8";
+:root {
+  --primary-color: #333333;
+  --secondary-color: #EE5F38;
+  --secondary-color2: #ED1D24;
+  --hover-color: #F6B924;
+  --yellow-color: #FF9800;
+  --foreground-color: #333333;
+  --foreground-sub-color: #636363;
+  --body-text-color: #000000;
+  --text-white-color: #fff;
+  --body-background-color: #fff;
+  --bg-offwhite-color: #EFF3F7;
+  --bg-gray-color: #F5F8FF;
+  --bg-black-color: #000000;
+  --bg-light-dark-color: #1a1818;
+  --border-color: #D9D9D9;
+  --rubik-fonts: 'Rubik', sans-serif;
+  --body-font-size: 1.4rem;
+  --body-font-weight: 400;
+  --body-line-height: 2.5rem;
+  --headings-weight: 700;
+  --transition: all 0.3s ease 0s;
+  --container-fluid-offset: 12rem;
+}
+
+/* Common Style */
+*,
+*::after,
+*::before {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+section {
+  scroll-margin-top: 100px;
+}
+
+html,
+body {
+  min-height: 100%;
+  margin: 0;
+  font-size: 62.5%;
+  padding: 0;
+}
+
+body {
+  font-family: var(--rubik-fonts);
+  font-size: var(--body-font-size, 1.4rem);
+  font-weight: var(--body-font-weight);
+  font-style: normal;
+  line-height: var(--body-line-height, 2.5rem);
+  position: relative;
+  visibility: visible;
+  overflow-x: hidden;
+  color: var(--foreground-color);
+  background-color: var(--background-color);
+}
