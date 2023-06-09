@@ -7,8 +7,11 @@ from skill.models import Skill
 from testimonial.models import Testimonials
 from tutorial.models import Tutorial
 from competitions.models import Competitions
+from profiles.models import Profile, SocialAccount
 
 def home(request):
+    profile = Profile.objects.get(id=1)
+    social = SocialAccount.objects.filter(profile=profile)
     comp = Competitions.objects.all()
     try:
         comp1 = comp[:len(comp)//2]
@@ -30,6 +33,8 @@ def home(request):
     work = Work.objects.all()
     testimonials = Testimonials.objects.all()
     context = {
+        'profile': profile,
+        'social': social,
         "blog": blog,
         'category': category,
         'projects': projects,

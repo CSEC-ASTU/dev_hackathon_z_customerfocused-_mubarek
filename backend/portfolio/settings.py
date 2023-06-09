@@ -53,6 +53,7 @@ INSTALLED_APPS = [
     'competitions',
     'tutorial',
     'profiles',
+    'trainings',
 ]
 
 MIDDLEWARE = [

@@ -137,35 +137,30 @@ transition: width 3s ease-in-out;
             <div class="hero__section--inner d-flex align-items-center">
                 <div class="hero__thumbnail position__relative">
                     <div class="hero__profile--thumbnail">
-                        <img class="hero__profile--thumbnail__media" src="{% static 'img/hero/muke.jpg' %}" alt="img">
+                        <img class="hero__profile--thumbnail__media" src="{{profile.image.url}}" alt="img">
                     </div>
                     <div class="projects__budget d-flex align-items-center">
                         <span class="projects__budget--icon">
                             <svg xmlns="http://www.w3.org/2000/svg" width="45" height="45" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-check-circle"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
                         </span>
                         <div class="projects__budget--content">
-                            <span class="projects__budget--ammount">35+</span>
+                            <span class="projects__budget--ammount">{{profile.completed_projects}}</span>
                             <span class="projects__budget--text">Complete Projects</span>
                         </div>
                     </div>
                     <span class="logo__positioning one">
-                        <img src="{% static 'img/logo/django-logo.png' %}" alt="logo">
+                        <img src="{{profile.popup_image1.url}}" width=100px height=100px alt="logo">
                     </span>
                     <span class="logo__positioning two">
-                        <img src="{% static 'img/logo/python.png' %}" alt="logo">
+                        <img src="{{profile.popup_image2.url}}" width=100px height=100px alt="logo">
                     </span>
                 </div>
                 <div class="hero__content">
                     <span class="hero__content--subtitle text__secondary mb-10">HELLO  I'M</span>
-                    <h2 class="hero__content--title mb-15">Mukerem Ali! </h2>
-                    <h3 class="hero__content--subtitle2 mb-20">ICPC Finalist , Software Developer and Data Scientist </h3>
+                    <h2 class="hero__content--title mb-15">{{profile.full_name}}! </h2>
+                    <h3 class="hero__content--subtitle2 mb-20">{{profile.short_description}}</h3>
                     <p class="hero__content--desc mb-30">
-                        Software Developer with 3 years of professional experience bringing enormous talent
-                        for software design, development, and integration. Offering advanced knowledge of
-                        in-demand programming languages and technologies such as Python, Django, REST
-                        Frameweork, and PostgreSQL among others. Experience in backend writing code
-                        and developing systems for web applications. Complex problem-solver with an
-                        analytical and driven mindset.
+                        {{profile.description}}
                     </p>
                     <div class="hero__content--footer d-flex align-items-center">
                         <div class="social__share d-flex align-items-center">
@@ -248,24 +243,23 @@ transition: width 3s ease-in-out;
                     <div class="about__info">
                         <h3 class="about__info--title text__secondary mb-20">PERSONAL INFOS:</h3>
                         <ul class="about__info--wrapper d-flex">
-                            <li class="about__info--items">First Name: Mukerem</li>
-                            <li class="about__info--items">Last Name: Ali</li>
-                            <li class="about__info--items">Address: Addis Ababa</li>
-                            <li class="about__info--items">Phone: +251913152485</li>
-                            <li class="about__info--items">Age: 26</li>
-                            <li  style="display: flex; flex-direction: row; gap: 5px;"  class="about__info--items">Email: <a href="mailto:mukeremali112@gmail.com"  >mukeremali112@gmail.com</a></li>
-                            <li class="about__info--items">Nationality: Ethiopian</li>
-                            <li class="about__info--items">Languages: English, Amharic</li>
+                            <li class="about__info--items">First Name: {{profile.first_name}}</li>
+                            <li class="about__info--items">Last Name: {{profile.last_name}}</li>
+                            <li class="about__info--items">Address: {{profile.address}}</li>
+                            <li class="about__info--items">Phone: {{profile.phone}}</li>
+                            <li class="about__info--items">Age: {{profile.age}}</li>
+                            <li  style="display: flex; flex-direction: row; gap: 5px;"  class="about__info--items">Email: <a href="mailto:{{profile.email}}"  >{{profile.email}}</a></li>
+                            <li class="about__info--items">Nationality: {{profile.nationality}}</li>
+                            <li class="about__info--items">Languages: {{profile.language}}</li>
                         </ul>
-                        <a class="about__btn primary__btn" href="#">Hire Me</a>
                     </div>
                 </div>
                 <div class="about__thumbnail">
                     <div class="about__thumbnail--media position__relative">
-                        <img class="position__relative" src="{% static 'img/hero/muke.jpg' %}" style="border-radius: 40px;" alt="img">
+                        <img class="position__relative" src="{{profile.cover_image.url}}" style="border-radius: 40px;" alt="img">
                     </div>
                     <div class="about__experience text-center">
-                        <h4 class="about__experience--title title-stroke">27</h4>
+                        <h4 class="about__experience--title title-stroke">{{profile.work_experience}}</h4>
                         <span class="about__experience--subtitle">Experience Working</span>
                     </div>
                 </div>
@@ -387,12 +381,6 @@ transition: width 3s ease-in-out;
             <div class="section__heading--topbar d-flex align-items-center justify-content-between mb-50">
                 <div class="section__heading max-width-580">
                     <span class="section__heading--subtitle text__secondary">SKILLs</span>
-                    <h2 class="section__heading--title">Skill of Best Masters Software Skills.</h2> 
-                </div>
-                <div class="section__heading--right max-width-450">
-                    <p class="section__heading--desc">Promote your blog posts, case udie, and product ouncems
-                        with the the branded videoscustomers coming back for
-                        services Makes best effort.</p>
                 </div>
             </div>
             <div class="skills__section--inner d-flex justify-content-between">
@@ -437,13 +425,6 @@ transition: width 3s ease-in-out;
             <div class="section__heading--topbar d-flex align-items-center justify-content-between mb-50">
                 <div class="section__heading max-width-580">
                     <span class="section__heading--subtitle text__secondary">PORTFOLIO</span>
-                    <h2 class="section__heading--title">Never compromise for 
-                        portfolio quality</h2> 
-                </div>
-                <div class="section__heading--right max-width-450">
-                    <p class="section__heading--desc">Promote your blog posts, case udie, and product ouncems
-                        with the the branded videoscustomers coming back for
-                        services Makes best effort.</p>
                 </div>
             </div>
             <div class="portfolio__section--inner">
@@ -483,7 +464,6 @@ transition: width 3s ease-in-out;
         <div class="container">
             <div class="section__heading text-center mb-50">
                 <span class="section__heading--subtitle text__secondary">TESTIMONIALS</span>
-                <h2 class="section__heading--title">We are people say me</h2> 
             </div>
             <div class="testimonial__inner testimonial__swiper--activation swiper">
                 <div class="swiper-wrapper">                    
@@ -667,7 +647,7 @@ transition: width 3s ease-in-out;
                             <div class="contact__info--content">
                                 <h3 class="contact__info--title">Call Me</h3>
                                 <p class="contact__info--desc">
-                                    <a href="tel:+251913152485">+251913152485</a>
+                                    <a href="tel:{{profile.phone}}">{{profile.phone}}</a>
                                 </p>
                             </div>
                         </div>
@@ -678,7 +658,7 @@ transition: width 3s ease-in-out;
                             <div class="contact__info--content">
                                 <h3 class="contact__info--title">Email Us</h3>
                                 <p class="contact__info--desc">
-                                    <a href="mailto:mukeremali112@gmail.com">mukeremali112@gmail.com</a>
+                                    <a href="mailto:{{profile.email}}">{{profile.email}}</a>
                                 </p>
                             </div>
                         </div>
@@ -687,7 +667,7 @@ transition: width 3s ease-in-out;
                                 <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-mail"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
                             </span>
                             <div class="contact__info--content">
-                                <h3 class="contact__info--title">Address</h3>
+                                <h3 class="contact__info--title">{{profile.address}}</h3>
                                 <p class="contact__info--desc">
                                     Addis Ababa, Ethiopia
                                 </p>
