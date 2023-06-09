@@ -1,7 +1,10 @@
+import os
 import requests
 from bs4 import BeautifulSoup
 
-def get_codeforce_stats():
+
+
+def scrap():
     url = f"https://codeforces.com/profile/mukeremali"
     response = requests.get(url)
     soup = BeautifulSoup(response.content, "html.parser")
@@ -10,8 +13,8 @@ def get_codeforce_stats():
 
     score = score_element.text.strip() if score_element else "N/A"
     rank = ''
-    return score, rank
+    absolute_logo_url = "../../media/scrape/codeforces.png"
+    name = "Codeforces"
+    return name, absolute_logo_url,score, rank
 
 # Usage
-score, rank = get_codeforce_stats()
-print(f"Solved: {score}")

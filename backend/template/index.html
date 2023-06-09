@@ -166,26 +166,13 @@ transition: width 3s ease-in-out;
                         <div class="social__share d-flex align-items-center">
                             <span class="social__share--title">Follow Me: </span>
                             <ul class="social__share--wrapper d-flex">
+                                {% for i in social %}
                                 <li class="social__share--child">
-                                    <a class="social__share--link" href="#">
-                                        <i class="fa fa-telegram" aria-hidden="true"></i>
+                                    <a class="social__share--link" href="{{i.link}}" target="_blank">
+                                        <i class="fa fa-{{i.name}}" aria-hidden="true"></i>
                                     </a>
                                 </li>
-                                <li class="social__share--child">
-                                    <a class="social__share--link" href="https://www.linkedin.com/in/mukerem-ali-7b1997147/" target="_blank">
-                                        <i class="fa fa-linkedin" aria-hidden="true"></i>
-                                    </a>
-                                </li>
-                                <li class="social__share--child">
-                                    <a class="social__share--link" href="https://github.com/mukerem" target="_blank">
-                                        <i class="fa fa-github" aria-hidden="true"></i>
-                                    </a>
-                                </li>
-                                <li class="social__share--child">
-                                    <a class="social__share--link" href="#">
-                                        <i class="fa fa-instagram" aria-hidden="true"></i>
-                                    </a>
-                                </li>
+                                {% endfor %}
                             </ul>
                         </div>
                     </div>
@@ -267,6 +254,41 @@ transition: width 3s ease-in-out;
         </div>
     </section>
     <!-- End about section -->
+
+    <!-- Start ONLINE PLATFORMS section -->
+    <section class="resume__section section--padding">
+        <div class="container">
+            <div class="section__heading--topbar d-flex align-items-center justify-content-between mb-50">
+                <div class="section__heading max-width-580">
+                    <span class="section__heading--subtitle text__secondary">ONLINE PLATFORMS</span>
+                </div>
+            </div>
+            <div class="resume__section--inner d-flex">
+                <div class="resume__step">
+                    {% for i in scrap %}
+                    <div class="resume__items">
+                        <div class="border__round"></div>
+                        <div class="resume__items--inner d-flex">
+                            <span class="resume__icons">
+                                <img src="{{i.link}}" width="50px" height="40px" style="border-radius: 50%;" alt="">
+                            </span>
+                            <div class="resume__content">
+                                <div class="resume__content--top d-flex align-items-center mb-10">
+                                    <h3 class="resume__content--title">{{i.name}}</h3>
+                                </div>
+                                {% if i.rank %}
+                                <p class="resume__content--desc mb-20">Rank : {{i.rank}}</p>
+                                {% endif %}
+                                <span class="resume__date">Score : {{i.score}}</span>
+                            </div>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- End ONLINE PLATFORMS section -->
 
     <!-- Start TRAININGS section -->
     <section class="resume__section section--padding">

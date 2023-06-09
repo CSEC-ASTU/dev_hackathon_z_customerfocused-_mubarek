@@ -1,7 +1,10 @@
+import os
 import requests
 from bs4 import BeautifulSoup
 
-def get_kattis_stats():
+
+
+def scrap():
     url = f"https://open.kattis.com/users/mukerem"
     response = requests.get(url)
     soup = BeautifulSoup(response.content, "html.parser")
@@ -11,10 +14,9 @@ def get_kattis_stats():
 
     score = score_element.text.strip() if score_element else "N/A"
     rank = rank_element.text.strip() if rank_element else "N/A"
+    absolute_logo_url = "../../media/scrape/kattis.png"
 
-    return score, rank
+    name = "Kattis"
+    return name, absolute_logo_url,score, rank
 
 # Usage
-score, rank = get_kattis_stats()
-print(f"Solved: {score}")
-print(f"Rank from All: {rank}")

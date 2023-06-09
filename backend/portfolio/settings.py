@@ -54,6 +54,7 @@ INSTALLED_APPS = [
     'tutorial',
     'profiles',
     'trainings',
+    'cv'
 ]
 
 MIDDLEWARE = [

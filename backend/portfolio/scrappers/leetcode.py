@@ -1,8 +1,11 @@
+import os
 import requests
 from bs4 import BeautifulSoup
 
-def get_leetcode_stats(username):
-    url = f"https://leetcode.com/{username}/"
+
+
+def scrap():
+    url = f"https://leetcode.com/mukeremali112/"
     response = requests.get(url)
     soup = BeautifulSoup(response.content, "html.parser")
 
@@ -12,10 +15,9 @@ def get_leetcode_stats(username):
     score = score_element.text.strip() if score_element else "N/A"
     rank = rank_element.text.strip() if rank_element else "N/A"
 
-    return score, rank
+    absolute_logo_url = "../../media/scrape/halloffame.png"
+
+    name = "Leetcode"
+    return name, absolute_logo_url,score, rank
 
 # Usage
-username = "mukeremali112"
-score, rank = get_leetcode_stats(username)
-print(f"Solved: {score}")
-print(f"Rank from All: {rank}")

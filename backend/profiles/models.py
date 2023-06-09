@@ -31,6 +31,9 @@ class SocialAccount(models.Model):
     socialmedia = models.CharField(max_length=150)
     link        = models.CharField(max_length=350)
 
+    def name(self):
+        return self.socialmedia.lower()
+
     def __str__(self):
         return self.socialmedia
     
