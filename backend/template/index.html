@@ -267,11 +267,6 @@
                     <span class="section__heading--subtitle text__secondary">EXPERICNCE AND EDUCATION</span>
                     <h2 class="section__heading--title">Resume of Experience and Education</h2> 
                 </div>
-                <div class="section__heading--right max-width-450">
-                    {% comment %} <p class="section__heading--desc">Promote your blog posts, case udie, and product ouncems
-                        with the the branded videoscustomers coming back for
-                        services Makes best effort.</p> {% endcomment %}
-                </div>
             </div>
             <div class="resume__section--inner d-flex">
                 <div class="resume__step">
@@ -486,37 +481,40 @@
             </div>
             <div class="resume__section--inner d-flex">
                 <div class="resume__step">
+                    {% for t in tutorial1 %}
                     <div class="resume__items">
                         <div class="border__round"></div>
                         <div class="resume__items--inner d-flex">
                             <span class="resume__icons">
-                                <img src="./icpc.png" width="40px" height="40px" style="border-radius: 50%;" alt="">
+                                <img src="{{i.image.url}}" width="40px" height="40px" style="border-radius: 50%;" alt="">
                             </span>
                             <div class="resume__content">
                                 <div class="resume__content--top d-flex align-items-center mb-10">
-                                    <h3 class="resume__content--title"><a href="">API Developer</a></h3>
+                                    <h3 class="resume__content--title"><a href="{{i.link}}" target="_blank">{{i.name}}</a></h3>
                                 </div>
-                                <p class="resume__content--desc mb-20"><a href="">Promote your blog posts, case udie, and product ouncems nts with thehe branded </a></p>
+                                <p class="resume__content--desc mb-20"><a href="{{i.link}}" target="_blank">{{i.short_description}}</a></p>
                             </div>
                         </div>
                     </div>
-                    
+                    {% endfor %}
                 </div>
                 <div class="resume__step">
+                    {% for t in tutorial2 %}
                     <div class="resume__items">
                         <div class="border__round"></div>
                         <div class="resume__items--inner d-flex">
                             <span class="resume__icons">
-                                <img src="./icpc.png" width="40px" height="40px" style="border-radius: 50%;" alt="">
+                                <img src="{{i.image.url}}" width="40px" height="40px" style="border-radius: 50%;" alt="">
                             </span>
                             <div class="resume__content">
                                 <div class="resume__content--top d-flex align-items-center mb-10">
-                                    <h3 class="resume__content--title"><a href="">Software Engineer</a></h3>
+                                    <h3 class="resume__content--title"><a href="{{i.link}}" target="_blank">{{i.name}}</a></h3>
                                 </div>
-                                <p class="resume__content--desc mb-20"><a href="">Promote your blog posts, case udie, and product ouncems nts with thehe branded </a></p>
+                                <p class="resume__content--desc mb-20"><a href="{{i.link}}" target="_blank">{{i.short_description}}</a></p>
                             </div>
                         </div>
                     </div>
+                    {% endfor %}
                 </div>
             </div>
         </div>
