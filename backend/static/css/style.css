@@ -5774,13 +5774,27 @@ blockquote::before {
 .skills__field.width_60::after {
   width: 60%;
 }
+.skills__field.width_65::after {
+  width: 65%;
+}
+.skills__field.width_70::after {
+  width: 70%;
+}
 
 .skills__field.width_75::after {
   width: 75%;
 }
-
+.skills__field.width_80::after {
+  width: 80%;
+}
+.skills__field.width_85::after {
+  width: 85%;
+}
 .skills__field.width_90::after {
   width: 90%;
+}
+.skills__field.width_95::after {
+  width: 95%;
 }
 
 .skills__field.width_100::after {
@@ -5834,9 +5848,17 @@ blockquote::before {
 .skills__count.width_60 {
   left: 55%;
 }
-
+.skills__count.width_65 {
+  left: 60%;
+}
 .skills__count.width_75 {
   left: 70%;
+}
+.skills__count.width_80 {
+  left: 75%;
+}
+.skills__count.width_85 {
+  left: 80%;
 }
 
 .skills__count.width_90 {
@@ -5844,19 +5866,97 @@ blockquote::before {
 }
 
 @media only screen and (min-width: 480px) {
+  .skills__count.width_45 {
+    left: 40%;
+  }
+  .skills__count.width_50 {
+    left: 45%;
+  }
+  .skills__count.width_55 {
+    left: 50%;
+  }
+  .skills__count.width_60 {
+    left: 55%;
+  }
+  .skills__count.width_65 {
+    left: 60%;
+  }
+  .skills__count.width_75 {
+    left: 70%;
+  }
+  .skills__count.width_80 {
+    left: 75%;
+  }
+  .skills__count.width_85 {
+    left: 80%;
+  }
+  
   .skills__count.width_90 {
     left: 85%;
   }
+  
 }
 
-.skills__count.width_100 {
-  left: 95%;
+.skills__count.width_45 {
+  left: 40%;
 }
+.skills__count.width_50 {
+  left: 45%;
+}
+.skills__count.width_55 {
+  left: 50%;
+}
+.skills__count.width_60 {
+  left: 55%;
+}
+.skills__count.width_65 {
+  left: 60%;
+}
+.skills__count.width_75 {
+  left: 70%;
+}
+.skills__count.width_80 {
+  left: 75%;
+}
+.skills__count.width_85 {
+  left: 80%;
+}
+
+.skills__count.width_90 {
+  left: 85%;
+}
+
 
 @media only screen and (min-width: 480px) {
-  .skills__count.width_100 {
-    left: 95%;
+  .skills__count.width_45 {
+    left: 40%;
   }
+  .skills__count.width_50 {
+    left: 45%;
+  }
+  .skills__count.width_55 {
+    left: 50%;
+  }
+  .skills__count.width_60 {
+    left: 55%;
+  }
+  .skills__count.width_65 {
+    left: 60%;
+  }
+  .skills__count.width_75 {
+    left: 70%;
+  }
+  .skills__count.width_80 {
+    left: 75%;
+  }
+  .skills__count.width_85 {
+    left: 80%;
+  }
+  
+  .skills__count.width_90 {
+    left: 85%;
+  }
+  
 }
 
 .skills__count.width_70 {

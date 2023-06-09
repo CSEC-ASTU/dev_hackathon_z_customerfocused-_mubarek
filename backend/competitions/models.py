@@ -9,7 +9,7 @@ class Competitions(models.Model):
     description = models.TextField()
 
     def short_description(self):
-        return self.description[:50]
+        return self.description[:80]
     
     def __str__(self):
         return self.name

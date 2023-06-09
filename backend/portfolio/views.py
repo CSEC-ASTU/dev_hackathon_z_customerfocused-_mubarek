@@ -6,8 +6,16 @@ from service.models import Service
 from skill.models import Skill
 from testimonial.models import Testimonials
 from tutorial.models import Tutorial
+from competitions.models import Competitions
 
 def home(request):
+    comp = Competitions.objects.all()
+    try:
+        comp1 = comp[:len(comp)//2]
+        comp2 = comp[len(comp)//2:]
+    except:
+        comp1=''
+        comp2=''
     tutorial = Tutorial.objects.all()
     tutorial1 = tutorial[:len(tutorial)//2]
     tutorial2 = tutorial[len(tutorial)//2:]
@@ -33,5 +41,7 @@ def home(request):
         "testimonials": testimonials,
         'tutorial1': tutorial1,
         'tutorial2': tutorial2,
+        'comp1': comp1,
+        'comp2': comp2,
     }
     return render(request, 'index.html', context)

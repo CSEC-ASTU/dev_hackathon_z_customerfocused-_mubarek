@@ -3,68 +3,133 @@
 {% load static %}
 {% block content %}
 <style>
-    .skills__field::before {
-      /* other styles... */
+  .skills__field.width_60::after {
+    width: 60%;
+  }
+  .skills__field.width_65::after {
+    width: 65%;
+  }
+  .skills__field.width_70::after {
+    width: 70%;
+  }
+  
+  .skills__field.width_75::after {
+    width: 75%;
+  }
+  .skills__field.width_80::after {
+    width: 80%;
+  }
+  .skills__field.width_85::after {
+    width: 85%;
+  }
+  .skills__field.width_90::after {
+    width: 90%;
+  }
+  .skills__field.width_95::after {
+    width: 95%;
+  }
+  
+  .skills__field.width_100::after {
+    width: 100%;
+  }
+  .skills__count.width_45 {
+    left: 40%;
+  }
+  .skills__count.width_50 {
+    left: 45%;
+  }
+  .skills__count.width_55 {
+    left: 50%;
+  }
+  .skills__count.width_60 {
+    left: 55%;
+  }
+  .skills__count.width_65 {
+    left: 60%;
+  }
+  .skills__count.width_75 {
+    left: 70%;
+  }
+  .skills__count.width_80 {
+    left: 75%;
+  }
+  .skills__count.width_85 {
+    left: 80%;
+  }
+  
+  .skills__count.width_90 {
+    left: 85%;
+  }
+  .skills__count.width_95 {
+    left: 90%;
+  }
+  .skills__count.width_100 {
+    left: 95%;
+  }
+</style>
+<style>
+  .skills__field::before {
+    /* other styles... */
+    width: 100%;
+  }
+  .skills__field {
+    position: relative;
+    height: 10px;
+    width: 100%;
+    background-color: #B7AAAA;
+    border-radius: 5px;
+    margin-bottom: 10px;
+  }
+  
+  .skills__field::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%; /* set width to 100% */
+    border-radius: 5px;
+    background-color: #534533;
+  }
+
+  .animate {
+width: 100%;
+background-color: #4f422b; /* orange color */
+transition: width 3s ease-in-out;
+}
+  
+  @keyframes progressAnimation {
+    0% {
+      width: 0%;
+    }
+    
+    100% {
       width: 100%;
     }
-    .skills__field {
-      position: relative;
-      height: 10px;
-      background-color: #B7AAAA;
-      border-radius: 5px;
-      margin-bottom: 10px;
-    }
-    
-    .skills__field::before {
-      content: "";
-      position: absolute;
-      top: 0;
-      left: 0;
-      height: 100%;
-      width: 100%; /* set width to 100% */
-      border-radius: 5px;
-      background-color: #ff8c00;
-    }
-
-    .animate {
-  width: 100%;
-  background-color: #FFA500; /* orange color */
-  transition: width 3s ease-in-out;
-}
-    
-    @keyframes progressAnimation {
-      0% {
-        width: 0%;
-      }
-      
-      100% {
-        width: 100%;
-      }
-    }
-      </style>
+  }
+    </style>
 <script>
-    function animateOnScroll() {
-        console.log('animateOnScroll called');
-        const skillFields = document.querySelectorAll('.skills__field');
-        skillFields.forEach((field) => {
-          const percent = field.getAttribute('data-percent');
-          const fieldTop = field.offsetTop;
-          const fieldHeight = field.offsetHeight;
-          const windowHeight = window.innerHeight;
-          const scrollY = window.scrollY;
-      
-          if (fieldTop + fieldHeight - windowHeight - scrollY <= 0) {
-            field.style.width = percent + '%';
-            field.classList.add('animate');
-          }
-      });
-      }
-      
-      window.addEventListener('scroll', animateOnScroll);
+  function animateOnScroll() {
+      console.log('animateOnScroll called');
+      const skillFields = document.querySelectorAll('.skills__field');
+      skillFields.forEach((field) => {
+        const percent = field.getAttribute('data-percent');
+        const fieldTop = field.offsetTop;
+        const fieldHeight = field.offsetHeight;
+        const windowHeight = window.innerHeight;
+        const scrollY = window.scrollY;
+    
+        if (fieldTop + fieldHeight - windowHeight - scrollY <= 0) {
+          field.style.width = percent + '%';
+          field.classList.add('animate');
+        }
+    });
+    }
+    
+    window.addEventListener('scroll', animateOnScroll);
 
-   
+ 
 </script>
-
 <main class="main__content_wrapper">
     <!-- Start Hero section -->
     <div class="hero__section hero__section--bg" id="home">
@@ -219,40 +284,42 @@
             </div>
             <div class="resume__section--inner d-flex">
                 <div class="resume__step">
+                    {% for i in comp1 %}
                     <div class="resume__items">
                         <div class="border__round"></div>
                         <div class="resume__items--inner d-flex">
                             <span class="resume__icons">
-                                <img src="./icpc.png" width="40px" height="40px" style="border-radius: 50%;" alt="">
+                                <img src="{{i.image.url}}" width="40px" height="40px" style="border-radius: 50%;" alt="">
                             </span>
                             <div class="resume__content">
                                 <div class="resume__content--top d-flex align-items-center mb-10">
-                                    <h3 class="resume__content--title">API DEVELOPER</h3>
-                                    <span class="resume__content--subtitle">Shopify</span>
+                                    <h3 class="resume__content--title">{{i.name}}</h3>
                                 </div>
-                                <p class="resume__content--desc mb-20">Promote your blog posts, case udie, and product ouncems nts with thehe branded videos.</p>
-                                <span class="resume__date">2021</span>
+                                <p class="resume__content--desc mb-20">{{i.short_description}}</p>
+                                <span class="resume__date">{{i.year}}</span>
                             </div>
                         </div>
                     </div>
-                    
+                    {% endfor %}
                 </div>
                 <div class="resume__step">
+                    {% for i in comp2 %}
                     <div class="resume__items">
                         <div class="border__round"></div>
                         <div class="resume__items--inner d-flex">
                             <span class="resume__icons">
-                                <img src="./icpc.png" width="40px" height="40px" style="border-radius: 50%;" alt="">
+                                <img src="{{i.image.url}}" width="40px" height="40px" style="border-radius: 50%;" alt="">
                             </span>
                             <div class="resume__content">
                                 <div class="resume__content--top d-flex align-items-center mb-10">
-                                    <h3 class="resume__content--title">Software Engineer</h3>
+                                    <h3 class="resume__content--title">{{i.name}}</h3>
                                 </div>
-                                <p class="resume__content--desc mb-20">Promote your blog posts, case udie, and product ouncems nts with thehe branded videos.</p>
-                                <span class="resume__date">2020</span>
+                                <p class="resume__content--desc mb-20">{{i.short_description}}</p>
+                                <span class="resume__date">{{i.year}}</span>
                             </div>
                         </div>
                     </div>
+                    {% endfor %}
                 </div>
             </div>
         </div>
@@ -338,7 +405,7 @@
                             <span class="skills__name">{{i.title}}</span></div>
                             <span class="skills__count width_{{i.percent}}" data-percent="{{i.percent}}">{{i.percent}}%</span>
                         </div>
-                        <div class="skills__field width_{{i.percent}} man" data-percent="{{i.percent}}"  style="animation: progressAnimation 2s ease-in-out;animation-fill-mode: forwards;">
+                        <div class="skills__field width_100" data-percent="{{i.percent}}"  style="animation: progressAnimation 2s ease-in-out;animation-fill-mode: forwards;">
                             
                         </div>
                     </div>
@@ -353,7 +420,7 @@
                             <span class="skills__name">{{i.title}}</span></div>
                             <span class="skills__count width_{{i.percent}}" data-percent="{{i.percent}}">{{i.percent}}%</span>
                         </div>
-                        <div class="skills__field width_{{i.percent}} man"  data-percent="{{i.percent}}" style="animation: progressAnimation 2s ease-in-out;animation-fill-mode: forwards;">
+                        <div class="skills__field width_100 man"  data-percent="{{i.percent}}" style="animation: progressAnimation 2s ease-in-out;">
                             
                         </div>
                     </div>
@@ -481,7 +548,7 @@
             </div>
             <div class="resume__section--inner d-flex">
                 <div class="resume__step">
-                    {% for t in tutorial1 %}
+                    {% for i in tutorial1 %}
                     <div class="resume__items">
                         <div class="border__round"></div>
                         <div class="resume__items--inner d-flex">
@@ -499,12 +566,12 @@
                     {% endfor %}
                 </div>
                 <div class="resume__step">
-                    {% for t in tutorial2 %}
+                    {% for i in tutorial2 %}
                     <div class="resume__items">
                         <div class="border__round"></div>
                         <div class="resume__items--inner d-flex">
                             <span class="resume__icons">
-                                <img src="{{i.image.url}}" width="40px" height="40px" style="border-radius: 50%;" alt="">
+                                <img src="{{i.image.url}}" width="30px" height="30px" style="border-radius: 50%;" alt="">
                             </span>
                             <div class="resume__content">
                                 <div class="resume__content--top d-flex align-items-center mb-10">
@@ -519,7 +586,7 @@
             </div>
         </div>
     </section>
-    <!-- End Competitions section -->
+    <!-- End Tutorials section -->
 
     <!-- Start blog section -->
     {% if blog %}
