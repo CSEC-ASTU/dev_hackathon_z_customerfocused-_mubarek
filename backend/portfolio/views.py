@@ -10,6 +10,7 @@ from competitions.models import Competitions
 from profiles.models import Profile, SocialAccount
 from trainings.models import Trainings
 
+
 def home(request):
     profile = Profile.objects.get(id=1)
     social = SocialAccount.objects.filter(profile=profile)
