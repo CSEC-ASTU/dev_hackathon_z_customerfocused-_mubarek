@@ -1,0 +1,62 @@
+<style>
+    .skills__field::before {
+      /* other styles... */
+      width: 100%;
+    }
+    .skills__field {
+      position: relative;
+      height: 10px;
+      background-color: #B7AAAA;
+      border-radius: 5px;
+      margin-bottom: 10px;
+    }
+    
+    .skills__field::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%; /* set width to 100% */
+      border-radius: 5px;
+      background-color: #ff8c00;
+    }
+
+    .animate {
+  width: 100%;
+  background-color: #FFA500; /* orange color */
+  transition: width 3s ease-in-out;
+}
+    
+    @keyframes progressAnimation {
+      0% {
+        width: 0%;
+      }
+      
+      100% {
+        width: 100%;
+      }
+    }
+      </style>
+<script>
+    function animateOnScroll() {
+        console.log('animateOnScroll called');
+        const skillFields = document.querySelectorAll('.skills__field');
+        skillFields.forEach((field) => {
+          const percent = field.getAttribute('data-percent');
+          const fieldTop = field.offsetTop;
+          const fieldHeight = field.offsetHeight;
+          const windowHeight = window.innerHeight;
+          const scrollY = window.scrollY;
+      
+          if (fieldTop + fieldHeight - windowHeight - scrollY <= 0) {
+            field.style.width = percent + '%';
+            field.classList.add('animate');
+          }
+      });
+      }
+      
+      window.addEventListener('scroll', animateOnScroll);
+
+   
+  </script>
