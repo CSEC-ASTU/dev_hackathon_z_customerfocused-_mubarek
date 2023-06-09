@@ -8,14 +8,18 @@ from testimonial.models import Testimonials
 from tutorial.models import Tutorial
 from competitions.models import Competitions
 from profiles.models import Profile, SocialAccount
+from trainings.models import Trainings
 
 def home(request):
     profile = Profile.objects.get(id=1)
     social = SocialAccount.objects.filter(profile=profile)
     comp = Competitions.objects.all()
+    training = Trainings.objects.all()
     try:
         comp1 = comp[:len(comp)//2]
         comp2 = comp[len(comp)//2:]
+        train1 = training[:len(training)//2]
+        train2 = training[len(training)//2:]
     except:
         comp1=''
         comp2=''
@@ -33,6 +37,8 @@ def home(request):
     work = Work.objects.all()
     testimonials = Testimonials.objects.all()
     context = {
+        'train1': train1,
+        'train2': train2,
         'profile': profile,
         'social': social,
         "blog": blog,

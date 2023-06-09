@@ -149,7 +149,7 @@ transition: width 3s ease-in-out;
                         </div>
                     </div>
                     <span class="logo__positioning one">
-                        <img src="{{profile.popup_image1.url}}" width=100px height=100px alt="logo">
+                        <img src="{{profile.popup_image1.url}}" width=80px height=100px alt="logo">
                     </span>
                     <span class="logo__positioning two">
                         <img src="{{profile.popup_image2.url}}" width=100px height=100px alt="logo">
@@ -267,6 +267,58 @@ transition: width 3s ease-in-out;
         </div>
     </section>
     <!-- End about section -->
+
+    <!-- Start TRAININGS section -->
+    <section class="resume__section section--padding">
+        <div class="container">
+            <div class="section__heading--topbar d-flex align-items-center justify-content-between mb-50">
+                <div class="section__heading max-width-580">
+                    <span class="section__heading--subtitle text__secondary">TRAININGS</span>
+                </div>
+            </div>
+            <div class="resume__section--inner d-flex">
+                <div class="resume__step">
+                    {% for i in train1 %}
+                    <div class="resume__items">
+                        <div class="border__round"></div>
+                        <div class="resume__items--inner d-flex">
+                            <span class="resume__icons">
+                                <img src="{{i.image.url}}" width="40px" height="40px" style="border-radius: 50%;" alt="">
+                            </span>
+                            <div class="resume__content">
+                                <div class="resume__content--top d-flex align-items-center mb-10">
+                                    <h3 class="resume__content--title">{{i.name}}</h3>
+                                </div>
+                                <p class="resume__content--desc mb-20">{{i.short_description}}</p>
+                                <span class="resume__date">{{i.year}}</span>
+                            </div>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+                <div class="resume__step">
+                    {% for i in train2 %}
+                    <div class="resume__items">
+                        <div class="border__round"></div>
+                        <div class="resume__items--inner d-flex">
+                            <span class="resume__icons">
+                                <img src="{{i.image.url}}" width="40px" height="40px" style="border-radius: 50%;" alt="">
+                            </span>
+                            <div class="resume__content">
+                                <div class="resume__content--top d-flex align-items-center mb-10">
+                                    <h3 class="resume__content--title">{{i.name}}</h3>
+                                </div>
+                                <p class="resume__content--desc mb-20">{{i.short_description}}</p>
+                                <span class="resume__date">{{i.year}}</span>
+                            </div>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- End TRAININGS section -->
 
     <!-- Start Competitions section -->
     <section class="resume__section section--padding">
