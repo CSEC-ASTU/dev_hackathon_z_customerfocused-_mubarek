@@ -4,6 +4,7 @@ from reportlab.pdfgen import canvas
 from bs4 import BeautifulSoup
 from django.shortcuts import get_object_or_404, render
 import requests
+from about.models import About
 from blog.models import Blog
 from experience.models import Work, Education
 from projects.models import Category, Project
@@ -64,6 +65,7 @@ def home(request):
     social = SocialAccount.objects.filter(profile=profile)
     comp = Competitions.objects.all()
     training = Trainings.objects.all()
+    about = About.objects.get(profile=profile)
     try:
         comp1 = comp[:len(comp)//2]
         comp2 = comp[len(comp)//2:]
@@ -105,6 +107,7 @@ def home(request):
         'tutorial2': tutorial2,
         'comp1': comp1,
         'comp2': comp2,
+        'about': about,
     }
     return render(request, 'index.html', context)
 
