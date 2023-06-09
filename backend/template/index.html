@@ -183,6 +183,7 @@ transition: width 3s ease-in-out;
     <!-- End Hero section -->
 
     <!-- Start sevices section -->
+    {% if services %}
     <section class="services__section section--padding" id="servives">
         <div class="container">
             <div class="section__heading--topbar d-flex align-items-center justify-content-between mb-50">
@@ -190,11 +191,6 @@ transition: width 3s ease-in-out;
                     <span class="section__heading--subtitle text__secondary">CREATIVE SERVICE</span>
                     <h2 class="section__heading--title">What can i do for service
                         clients you</h2> 
-                </div>
-                <div class="section__heading--right max-width-450">
-                    <p class="section__heading--desc">Promote your blog posts, case udie, and product ouncems
-                        with the the branded videoscustomers coming back for
-                        services Makes best effort.</p>
                 </div>
             </div>
             <div class="services__section--inner">
@@ -216,6 +212,7 @@ transition: width 3s ease-in-out;
             </div>
         </div>
     </section> 
+    {% endif %}
     <!-- End sevices section -->
 
     <!-- Start about section -->
@@ -291,6 +288,7 @@ transition: width 3s ease-in-out;
     <!-- End ONLINE PLATFORMS section -->
 
     <!-- Start TRAININGS section -->
+    {% if train1 or train2 %}
     <section class="resume__section section--padding">
         <div class="container">
             <div class="section__heading--topbar d-flex align-items-center justify-content-between mb-50">
@@ -340,9 +338,11 @@ transition: width 3s ease-in-out;
             </div>
         </div>
     </section>
+    {% endif %}
     <!-- End TRAININGS section -->
 
     <!-- Start Competitions section -->
+    {% if comp1 or comp2 %}
     <section class="resume__section section--padding">
         <div class="container">
             <div class="section__heading--topbar d-flex align-items-center justify-content-between mb-50">
@@ -392,9 +392,11 @@ transition: width 3s ease-in-out;
             </div>
         </div>
     </section>
+    {% endif %}
     <!-- End Competitions section -->
 
     <!-- Start resume section -->
+    {% if education or work %}
     <section class="resume__section section--padding">
         <div class="container">
             <div class="section__heading--topbar d-flex align-items-center justify-content-between mb-50">
@@ -447,9 +449,11 @@ transition: width 3s ease-in-out;
             </div>
         </div>
     </section>
+    {% endif %}
     <!-- End resume section -->
 
     <!-- Start skills Section -->
+    {% if skill2 or skill1 %}
     <section class="skills__section section--padding pt-0">
         <div class="container">
             <div class="section__heading--topbar d-flex align-items-center justify-content-between mb-50">
@@ -491,9 +495,11 @@ transition: width 3s ease-in-out;
             </div>
         </div>
     </section>
+    {% endif %}
     <!-- End skills Section -->
 
     <!-- Start portfolio section -->
+    {% if projects %}
     <section class="portfolio__section portfolio__section--bg section--padding" id="portfolio">
         <div class="container">
             <div class="section__heading--topbar d-flex align-items-center justify-content-between mb-50">
@@ -531,10 +537,12 @@ transition: width 3s ease-in-out;
             </div>
         </div>
     </section>
+    {% endif %}
     <!-- End portfolio section -->
     
     <!-- Start testimonial section -->
-    <section class="testimonial__section section--padding position__relative">
+    {% if testimonials %}
+    <section id="testimonial" class="testimonial__section section--padding position__relative">
         <div class="container">
             <div class="section__heading text-center mb-50">
                 <span class="section__heading--subtitle text__secondary">TESTIMONIALS</span>
@@ -590,10 +598,12 @@ transition: width 3s ease-in-out;
             <svg width="260" height="260" fill="currentColor" stroke="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M448 296c0 66.3-53.7 120-120 120h-8c-17.7 0-32-14.3-32-32s14.3-32 32-32h8c30.9 0 56-25.1 56-56v-8H320c-35.3 0-64-28.7-64-64V160c0-35.3 28.7-64 64-64h64c35.3 0 64 28.7 64 64v32 32 72zm-256 0c0 66.3-53.7 120-120 120H64c-17.7 0-32-14.3-32-32s14.3-32 32-32h8c30.9 0 56-25.1 56-56v-8H64c-35.3 0-64-28.7-64-64V160c0-35.3 28.7-64 64-64h64c35.3 0 64 28.7 64 64v32 32 72z"></path></svg>
         </span>
     </section>
+    {% endif %}
     <!-- End testimonial section -->
 
     <!-- Start Tutorials section -->
-    <section class="resume__section section--padding">
+    {% if tutorial1 or tutorial2 %}
+    <section id="tutorial" class="resume__section section--padding">
         <div class="container">
             <div class="section__heading--topbar d-flex align-items-center justify-content-between mb-50">
                 <div class="section__heading max-width-580">
@@ -640,6 +650,7 @@ transition: width 3s ease-in-out;
             </div>
         </div>
     </section>
+    {% endif %}
     <!-- End Tutorials section -->
 
     <!-- Start blog section -->
@@ -698,7 +709,7 @@ transition: width 3s ease-in-out;
                             <h2 class="section__heading--title mb-10">Contact Us for Inquiries, Collaborations, and More</h2> 
                             <p class="section__heading--desc">Reach Out for Inquiries or Collaborations. Whether you have questions or wish to explore collaboration opportunities, we're here to assist you. Contact us using the provided information and our team of experts will promptly respond to your inquiries. We look forward to connecting with you and discussing how we can meet your software development needs.</p>
                         </div>
-                        <form class="contact__form" action="#">
+                        <form class="contact__form" action="mailto:manmuba90@gmail.com">
                             <div class="row">
                                 <div class="col-lg-6 col-md-6 col-sm-6 mb-30">
                                     <input class="contact__input--field" placeholder="Your name" type="text">

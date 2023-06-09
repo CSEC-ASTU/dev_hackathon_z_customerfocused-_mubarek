@@ -22,7 +22,8 @@ from . import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', views.home)
+    path('', views.home),
+    path('download-pdf/<int:document_id>/', views.download_pdf, name='download_pdf')
 ]
 if settings.DEBUG:
     urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

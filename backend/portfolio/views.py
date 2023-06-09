@@ -1,5 +1,8 @@
+from django.http import HttpResponse
+from django.http import FileResponse
+from reportlab.pdfgen import canvas
 from bs4 import BeautifulSoup
-from django.shortcuts import render
+from django.shortcuts import get_object_or_404, render
 import requests
 from blog.models import Blog
 from experience.models import Work, Education
@@ -104,3 +107,11 @@ def home(request):
         'comp2': comp2,
     }
     return render(request, 'index.html', context)
+
+
+def download_pdf(request, document_id):
+    document = Cv.objects.get(id=document_id)
+    file_path = document.cv.path
+    response = FileResponse(open(file_path, 'rb'), content_type='application/pdf')
+    response['Content-Disposition'] = 'attachment; filename="document.pdf"'
+    return response
