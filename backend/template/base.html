@@ -1,0 +1,106 @@
+{% load static %}
+
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>Mukerem Ali - Portfolio</title>
+  <meta name="description" content="Morden Bootstrap HTML5 Template">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="shortcut icon" type="image/x-icon" href="{% static 'maxthon.png' %}">
+
+  <!-- swipper css -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    
+   <!-- ======= All CSS Plugins here ======== -->
+  <link rel="stylesheet" href="{% static 'css/plugins/swiper-bundle.min.css' %}">
+  
+  <!-- Plugin css -->
+  <link rel="stylesheet" href="{% static 'css/vendor/bootstrap.min.css' %}">
+
+  <!-- Custom Style CSS -->
+  <link rel="stylesheet" href="{% static 'css/style.css' %}">
+
+  <!-- Dark css here -->
+  <link rel="stylesheet" href="{% static 'css/dark.css' %}">
+
+
+  <!-- font awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">   
+
+  <script>
+    // On page load or when changing themes, best to add inline in `head` to avoid FOUC
+    if (localStorage.getItem("theme-color") === "dark" || (!("theme-color" in localStorage) && window.matchMedia("(prefers-color-scheme: dark)").matches)) {
+      document.documentElement.classList.add("dark");
+    } 
+    if (localStorage.getItem("theme-color") === "light") {
+      document.documentElement.classList.remove("dark");
+    } 
+  </script>
+
+</head>
+
+<body class="bg-dark_primary_bg">
+
+    <!--include the Header-->
+    {% include 'includes/header.html' %}
+
+    {% block content %}
+    
+    {% endblock content %}
+
+    <!--include the Feader-->
+    {% include 'includes/footer.html' %}
+
+   <!-- All Script JS Plugins here  -->
+   <script src="{% static 'js/vendor/popper.js' %}" defer="defer"></script>
+   <script src="{% static 'js/vendor/bootstrap.min.js' %}" defer="defer"></script>
+   <script src="{% static 'js/plugins/swiper-bundle.min.js' %}"></script>
+   <script src="{% static 'js/plugins/isotope.pkgd.min.js' %}"></script>
+   <script src="{% static 'js/plugins/imagesloaded.pkgd.min.js' %}"></script>
+
+  <!-- Customscript js -->
+  <script src="{% static 'js/script.js' %}"></script>
+
+  <!-- swiper js -->
+  <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+
+    <script>
+        var swiper = new Swiper(".mySwiper", {
+            slidersPreView: 3,
+            spaceBetween: 30,
+            grabCursor: true,
+            autoplay: {
+                delay: 2500,
+                disableOnInteraction: false,
+                pouseOnMouseEnter: true,
+            },
+            slidesPerGroup: 1,
+            loop: true,
+            pagination: {
+                el: ".swiper-pagination",
+                clickable: true,
+            },
+            navigation: {
+                nextE1: "swiper-button-next",
+                prevE1: "swiper-button-prev",
+            }
+        });
+    </script>
+
+  <!-- Dark to light js -->
+  <script>
+    // On page load or when changing themes, best to add inline in `head` to avoid FOUC
+    if (localStorage.getItem("theme-color") === "dark" || (!("theme-color" in localStorage) && window.matchMedia("(prefers-color-scheme: dark)").matches)) {
+      document.getElementById("light__to--dark")?.classList.add("dark--version");
+    } 
+    if (localStorage.getItem("theme-color") === "light") {
+      document.getElementById("light__to--dark")?.classList.remove("dark--version");
+    } 
+  </script>
+  
+</body>
+</html>
