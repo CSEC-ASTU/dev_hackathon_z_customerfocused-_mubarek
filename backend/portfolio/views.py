@@ -41,7 +41,7 @@ cses = scrap("https://cses.fi/user/119282","td","", "CSES", "cses.png")
 codeforces = scrap("https://codeforces.com/profile/mukeremali","div","_UserActivityFrame_counterValue", "Codeforces", "codeforces.png")
 kattis = scrap("https://open.kattis.com/users/mukerem", "span", "important_number", "Kattis", "kattis.png",1,0, "span", "important_number")
 HallOfFame = scrap("https://cphof.org/profile/codeforces:mukeremali", "td", "light-cell", "Hall of Fame", "halloffame.png", -1,0, "td", "light-cell")
-leetcode = scrap("https://leetcode.com/mukeremali112/", "div", "text-[24px] font-medium text-label-1 dark:text-dark-label-1", "Leetcode", "halloffame.png", p="span", q="ttext-label-1 dark:text-dark-label-1 font-medium")
+leetcode = scrap("https://leetcode.com/mukeremali112/", "div", "text-[24px] font-medium text-label-1 dark:text-dark-label-1", "Leetcode", "leetcode.svg", p="span", q="ttext-label-1 dark:text-dark-label-1 font-medium")
 def scraped():
     data=[]
     d=[cses, codeforces, HallOfFame, kattis, leetcode]
