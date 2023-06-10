@@ -711,17 +711,17 @@ transition: width 3s ease-in-out;
                             <h2 class="section__heading--title mb-10">Contact Us for Inquiries, Collaborations, and More</h2> 
                             <p class="section__heading--desc">Reach Out for Inquiries or Collaborations. Whether you have questions or wish to explore collaboration opportunities, we're here to assist you. Contact us using the provided information and our team of experts will promptly respond to your inquiries. We look forward to connecting with you and discussing how we can meet your software development needs.</p>
                         </div>
-                        <form class="contact__form" action="mailto:manmuba90@gmail.com">
+                        <form class="contact__form pageclip-form" action="https://send.pageclip.co/hKYsXYR2RBh0FuVcS0xFoss6kb5vfM0j" method="post">
                             <div class="row">
                                 <div class="col-lg-6 col-md-6 col-sm-6 mb-30">
-                                    <input class="contact__input--field" placeholder="Your name" type="text">
+                                    <input class="contact__input--field" name="name" placeholder="Your name" type="text" required>
                                 </div>
                                 <div class="col-lg-6 col-md-6 col-sm-6 mb-30">
-                                    <input class="contact__input--field" placeholder="Your email" type="text">
+                                    <input class="contact__input--field" name="email" placeholder="Your email" type="text" required>
                                 </div>
                             </div>
-                            <textarea class="contact__textarea--field" placeholder="Message"></textarea>
-                            <button class="contact__button primary__btn">Send Request</button>
+                            <textarea class="contact__textarea--field" name="message" placeholder="Message" required></textarea>
+                            <button class="contact__button primary__btn pageclip-form__submit">Send Request</button>
                         </form>
                     </div>
                 </div>
