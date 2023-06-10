@@ -62,9 +62,9 @@ def home(request):
     scrap = scraped()
     profile = Profile.objects.get(id=1)
     cv = Cv.objects.get(profile=profile)
-    social = SocialAccount.objects.filter(profile=profile)
-    comp = Competitions.objects.all()
-    training = Trainings.objects.all()
+    social = SocialAccount.objects.filter(profile=profile).order_by('-id')
+    comp = Competitions.objects.all().order_by('-id')
+    training = Trainings.objects.all().order_by('-id')
     about = About.objects.get(profile=profile)
     try:
         comp1 = comp[:len(comp)//2]
@@ -74,19 +74,19 @@ def home(request):
     except:
         comp1=''
         comp2=''
-    tutorial = Tutorial.objects.all()
+    tutorial = Tutorial.objects.all().order_by('-id')
     tutorial1 = tutorial[:len(tutorial)//2]
     tutorial2 = tutorial[len(tutorial)//2:]
-    blog = Blog.objects.all()
-    category = Category.objects.all()
-    education = Education.objects.all()
-    projects = Project.objects.all()
-    services = Service.objects.all()
-    skill = Skill.objects.all()
+    blog = Blog.objects.all().order_by('-id')
+    category = Category.objects.all().order_by('-id')
+    education = Education.objects.all().order_by('-id')
+    projects = Project.objects.all().order_by('-id')
+    services = Service.objects.all().order_by('-id')
+    skill = Skill.objects.all().order_by('-id')
     skill1 = skill[:len(skill)//2]
     skill2 = skill[len(skill)//2::]
-    work = Work.objects.all()
-    testimonials = Testimonials.objects.all()
+    work = Work.objects.all().order_by('-id')
+    testimonials = Testimonials.objects.all().order_by('-id')
     context = {
         'cv': cv,
         'scrap': scrap,
