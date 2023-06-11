@@ -476,8 +476,8 @@ transition: width 3s ease-in-out;
                             <span class="skills__name">{{i.title}}</span></div>
                             <span class="skills__count width_{{i.percent}}" data-percent="{{i.percent}}">{{i.percent}}%</span>
                         </div>
-                        <div class="skills__field width_100" data-percent="{{i.percent}}"  style="animation: progressAnimation 2s ease-in-out;animation-fill-mode: forwards;">
-                            
+                        <div class="skills__field width_{{i.percent}}" data-percent="{{i.percent}}"  style="animation: progressAnimation 2s ease-in-out;animation-fill-mode: forwards;">
+
                         </div>
                     </div>
                     {% endfor %}
@@ -491,8 +491,8 @@ transition: width 3s ease-in-out;
                             <span class="skills__name">{{i.title}}</span></div>
                             <span class="skills__count width_{{i.percent}}" data-percent="{{i.percent}}">{{i.percent}}%</span>
                         </div>
-                        <div class="skills__field width_100 man"  data-percent="{{i.percent}}" style="animation: progressAnimation 2s ease-in-out;">
-                            
+                        <div class="skills__field width_{{i.percent}}" data-percent="{{i.percent}}"  style="animation: progressAnimation 2s ease-in-out;animation-fill-mode: forwards;">
+
                         </div>
                     </div>
                     {% endfor %}
