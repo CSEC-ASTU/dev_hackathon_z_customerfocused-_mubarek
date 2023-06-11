@@ -6,7 +6,7 @@ class Work(models.Model):
     company     = models.CharField(max_length=150)
     title       = models.CharField(max_length=150)
     description = models.TextField()
-    start       = models.IntegerField()
+    start       = models.DateField()
     to          = models.CharField(max_length=50)
 
     def short_description(self):
