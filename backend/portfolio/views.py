@@ -37,7 +37,7 @@ def scrap(m,n,o,r,s,k=0,w=0,p=0,q=0):
     name = r
     return name, absolute_logo_url,score, rank
 
-cses = scrap("https://cses.fi/user/119282","td","", "CSES", "cses.png")
+cses = scrap("https://cses.fi/user/119282","td","", "CSES", "cses.png", k=1)
 codeforces = scrap("https://codeforces.com/profile/mukeremali","div","_UserActivityFrame_counterValue", "Codeforces", "codeforces.png")
 kattis = scrap("https://open.kattis.com/users/mukerem", "span", "important_number", "Kattis", "kattis.png",1,0, "span", "important_number")
 HallOfFame = scrap("https://cphof.org/profile/codeforces:mukeremali", "td", "light-cell", "Hall of Fame", "halloffame.png", -1,0, "td", "light-cell")
